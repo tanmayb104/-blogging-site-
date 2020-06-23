@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read</title>
+</head>
+
+<body>
+    <ul>
+        <h1>Blogs</h1>
+        {% for blog in blogs %}
+            {% if not blog.delete %}
+                <li>Title: {{blog.title}}</li>
+                <li>User: {{blog.user}} </li>
+                <li>Date: {{blog.date}} </li>
+                <li>Content: {{blog.content}} </li><br><br>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

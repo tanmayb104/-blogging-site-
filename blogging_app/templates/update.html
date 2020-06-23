@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+</head>
+
+<body>
+    <ul>
+        <h1>Blogs</h1>
+        {% for blog in blogs %}
+            {% if not blog.delete %}
+                <li>Title: {{blog.title}}</li>
+                <li>User: {{blog.user}} </li>
+                <li>Date: {{blog.date}} </li>
+                <li>Content: {{blog.content}} </li><br><br>
+            {% endif %}
+        {% endfor %}
+        <form action="update" method="post">
+            {% csrf_token %}
+     
+            Enter the title of the blog you would like to update <input type="text" name="title" placeholder="Title"><br>
+            Enter the updated title <input type="text" name="updated_title" placeholder="Updated Title"><br>
+            Enter the updated content <input type="text" name="updated_content" placeholder="Updated Content"><br>
+            <input type="submit">  
+            
+        </form>
+    </ul>
+
+</body>
+
+</html>

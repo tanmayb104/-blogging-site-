@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create</title>
+</head>
+
+<body>
+    <form action="create" method="post">
+        {% csrf_token %}
+
+        <li>Hello, {{user.first_name}}</li><br>
+        <input type="text" name="title" placeholder="Title"><br>
+        <input type="text" name="content" placeholder="Content"><br>
+        <input type="submit">   
+    </form>
+</body>
+
+</html>
